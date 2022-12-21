@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Net5TestApp.Common
+namespace Net5TestApp.Common.Objects
 {
     public interface IResponse<T> : IResponse
     {

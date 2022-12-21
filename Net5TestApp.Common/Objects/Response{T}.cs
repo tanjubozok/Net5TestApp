@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Net5TestApp.Common
+namespace Net5TestApp.Common.Objects
 {
     public class Response<T> : Response, IResponse<T>
     {

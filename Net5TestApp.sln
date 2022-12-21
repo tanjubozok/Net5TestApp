@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.Common", "Net5TestApp.Common\Net5TestApp.Common.csproj", "{AE712117-0CE0-4B61-BE99-5237C74A540C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5TestApp.Common", "Net5TestApp.Common\Net5TestApp.Common.csproj", "{AE712117-0CE0-4B61-BE99-5237C74A540C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.Entities", "Net5TestApp.Entities\Net5TestApp.Entities.csproj", "{5880B881-C947-4B68-98AD-558A6EA21B90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5TestApp.Entities", "Net5TestApp.Entities\Net5TestApp.Entities.csproj", "{5880B881-C947-4B68-98AD-558A6EA21B90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.DataAccess", "Net5TestApp.DataAccess\Net5TestApp.DataAccess.csproj", "{D3DDD67B-CC65-485F-8712-94BB4E5CC764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5TestApp.DataAccess", "Net5TestApp.DataAccess\Net5TestApp.DataAccess.csproj", "{D3DDD67B-CC65-485F-8712-94BB4E5CC764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.Business", "Net5TestApp.Business\Net5TestApp.Business.csproj", "{1323BC5A-F578-4B15-967B-46B3A0C543E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.WebUI", "Net5TestApp.WebUI\Net5TestApp.WebUI.csproj", "{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{D3DDD67B-CC65-485F-8712-94BB4E5CC764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3DDD67B-CC65-485F-8712-94BB4E5CC764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3DDD67B-CC65-485F-8712-94BB4E5CC764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1323BC5A-F578-4B15-967B-46B3A0C543E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1323BC5A-F578-4B15-967B-46B3A0C543E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1323BC5A-F578-4B15-967B-46B3A0C543E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1323BC5A-F578-4B15-967B-46B3A0C543E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
