@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.Common", "Net5T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.Entities", "Net5TestApp.Entities\Net5TestApp.Entities.csproj", "{5880B881-C947-4B68-98AD-558A6EA21B90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.DataAccess", "Net5TestApp.DataAccess\Net5TestApp.DataAccess.csproj", "{D3DDD67B-CC65-485F-8712-94BB4E5CC764}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5880B881-C947-4B68-98AD-558A6EA21B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5880B881-C947-4B68-98AD-558A6EA21B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5880B881-C947-4B68-98AD-558A6EA21B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DDD67B-CC65-485F-8712-94BB4E5CC764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DDD67B-CC65-485F-8712-94BB4E5CC764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DDD67B-CC65-485F-8712-94BB4E5CC764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DDD67B-CC65-485F-8712-94BB4E5CC764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
