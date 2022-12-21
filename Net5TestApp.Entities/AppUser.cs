@@ -8,6 +8,10 @@ namespace Net5TestApp.Entities
         public string Password { get; set; }
         public string Phone { get; set; }
 
+        public int GenderId { get; set; }
+        public Gender Gender { get; set; }
+
         public List<AppUserRoles> AppUserRoles { get; set; }
+        public List<AdvertisementAppUser> AdvertisementAppUsers { get; set; }
     }
 }
