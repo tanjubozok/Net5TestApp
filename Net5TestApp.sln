@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.Business", "Net
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.WebUI", "Net5TestApp.WebUI\Net5TestApp.WebUI.csproj", "{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5TestApp.Dtos", "Net5TestApp.Dtos\Net5TestApp.Dtos.csproj", "{DECB9D6A-1A9D-4009-BBA5-5C88AFBA5BC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB656AF-1250-4DD8-96E0-9C3A18F2C76D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECB9D6A-1A9D-4009-BBA5-5C88AFBA5BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECB9D6A-1A9D-4009-BBA5-5C88AFBA5BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECB9D6A-1A9D-4009-BBA5-5C88AFBA5BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECB9D6A-1A9D-4009-BBA5-5C88AFBA5BC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Net5TestApp.DataAccess.Concrete.EfCore.Configuration;
-using Net5TestApp.Entities;
+using Net5TestApp.Entities.Concrete;
 
 namespace Net5TestApp.DataAccess.Concrete.EfCore.Context
 {

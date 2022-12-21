@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Net5TestApp.Entities
+namespace Net5TestApp.Entities.Concrete
 {
     public class Advertisement : BaseEntity
     {

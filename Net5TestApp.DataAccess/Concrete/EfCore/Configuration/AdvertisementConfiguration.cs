@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Net5TestApp.Entities;
+using Net5TestApp.Entities.Concrete;
 
 namespace Net5TestApp.DataAccess.Concrete.EfCore.Configuration
 {

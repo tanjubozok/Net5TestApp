@@ -1,4 +1,4 @@
-﻿namespace Net5TestApp.Entities
+﻿namespace Net5TestApp.Entities.Concrete
 {
     public class BaseEntity
     {

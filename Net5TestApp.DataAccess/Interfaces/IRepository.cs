@@ -1,5 +1,5 @@
 ﻿using Net5TestApp.Common.Enums;
-using Net5TestApp.Entities;
+using Net5TestApp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
