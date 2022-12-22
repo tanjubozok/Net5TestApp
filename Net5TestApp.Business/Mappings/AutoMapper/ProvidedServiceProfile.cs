@@ -8,9 +8,9 @@ namespace Net5TestApp.Business.Mappings.AutoMapper
     {
         public ProvidedServiceProfile()
         {
+            CreateMap<ProvidedServiceListDto, ProvidedService>().ReverseMap();
             CreateMap<ProvidedServiceCreateDto, ProvidedService>().ReverseMap();
             CreateMap<ProvidedServiceUpdateDto, ProvidedService>().ReverseMap();
-            CreateMap<ProvidedServiceListDto, ProvidedService>().ReverseMap();
         }
     }
 }

@@ -1,0 +1,41 @@
+﻿@model List<AdvertisementListDto>
+@{
+    TempData["Title"] = "İş İlanları";
+}
+
+<div style="margin-top:100px;"></div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="accordion" id="accordionExample">
+            @for (int i = 0; i < Model?.Count; i++)
+            {
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-@Model[i].Id">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@Model[i].Id" aria-expanded="@(i==0)" aria-controls="collapse-@Model[i].Id">
+                            @Model[i].Title
+                        </button>
+                    </h2>
+                    <div id="collapse-@Model[i].Id" class="accordion-collapse collapse @(i==0?"show":"")" aria-labelledby="heading-@Model[i].Id" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            @Model[i].Description
+                            <hr />
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <button class="btn btn-primary">Başvur</button>
+                            }
+                            else
+                            {
+                                <div>
+                                    İlana başvurabilmek için giriş yapmanız gerekiyor.
+                                </div>
+                                <a class="btn btn-info btn-sm">Giriş Yap</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

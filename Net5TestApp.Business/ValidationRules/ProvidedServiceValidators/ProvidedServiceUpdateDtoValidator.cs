@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Net5TestApp.Dtos.Concrete.ProvidedServiceDtos;
 
-namespace Net5TestApp.Business.ValidationRules
+namespace Net5TestApp.Business.ValidationRules.ProvidedServiceValidators
 {
     public class ProvidedServiceUpdateDtoValidator : AbstractValidator<ProvidedServiceUpdateDto>
     {

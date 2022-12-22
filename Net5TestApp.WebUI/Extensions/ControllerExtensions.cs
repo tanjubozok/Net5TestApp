@@ -5,6 +5,13 @@ namespace Net5TestApp.WebUI.Extensions
 {
     public static class ControllerExtensions
     {
+        public static IActionResult ResponseRedirectAction(this Controller controller, IResponse response, string actionName)
+        {
+            if (response.ResponseType == ResponseType.NotFound)
+                return controller.NotFound();
+            return controller.RedirectToAction(actionName);
+        }
+
         public static IActionResult ResponseRedirectAction<T>(this Controller controller, IResponse<T> response, string actionName, string controllerName = "")
         {
             if (response.ResponseType == ResponseType.NotFound)
@@ -32,13 +39,6 @@ namespace Net5TestApp.WebUI.Extensions
             if (response.ResponseType == ResponseType.NotFound)
                 return controller.NotFound();
             return controller.View(response.Data);
-        }
-
-        public static IActionResult ResponseRedirectAction(this Controller controller, IResponse response, string actionName)
-        {
-            if (response.ResponseType == ResponseType.NotFound)
-                return controller.NotFound();
-            return controller.RedirectToAction(actionName);
         }
     }
 }

@@ -6,9 +6,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Net5TestApp.Business.Interfaces;
 using Net5TestApp.Business.Mappings.AutoMapper;
 using Net5TestApp.Business.Services;
-using Net5TestApp.Business.ValidationRules;
+using Net5TestApp.Business.ValidationRules.AdvertisementValidators;
+using Net5TestApp.Business.ValidationRules.ProvidedServiceValidators;
 using Net5TestApp.DataAccess.Concrete.EfCore.Context;
 using Net5TestApp.DataAccess.Concrete.UnitOfWork;
+using Net5TestApp.Dtos.Concrete.AdvertisementDtos;
 using Net5TestApp.Dtos.Concrete.ProvidedServiceDtos;
 
 namespace Net5TestApp.Business.DependencyResolvers
@@ -25,16 +27,19 @@ namespace Net5TestApp.Business.DependencyResolvers
             var mapperConfiguration = new MapperConfiguration(opt =>
             {
                 opt.AddProfile(new ProvidedServiceProfile());
+                opt.AddProfile(new AdvertisementProfile());
             });
             var mapper = mapperConfiguration.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddScoped<IUow, Uow>();
-
             services.AddTransient<IValidator<ProvidedServiceCreateDto>, ProvidedServiceCreateDtoValidator>();
             services.AddTransient<IValidator<ProvidedServiceUpdateDto>, ProvidedServiceUpdateDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementCreateDto>, AdvertisementCreateDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementUpdateDto>, AdvertisementUpdateDtoValidator>();
 
+            services.AddScoped<IUow, Uow>();
             services.AddScoped<IProvidedServiceService, ProvidedServiceService>();
+            services.AddScoped<IAdvertisementService, AdvertisementService>();
         }
     }
 }
