@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Net5TestApp.Business.Interfaces;
+using Net5TestApp.WebUI.Extensions;
 using System.Threading.Tasks;
 
 namespace Net5TestApp.WebUI.Controllers
@@ -15,8 +16,8 @@ namespace Net5TestApp.WebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var list = await _providedServiceService.GetAllAsync();
-            return View(list);
+            var response = await _providedServiceService.GetAllAsync();
+            return this.ResponseView(response);
         }
     }
 }
