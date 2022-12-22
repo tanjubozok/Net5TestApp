@@ -1,10 +1,8 @@
-﻿using AutoMapper;
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Net5TestApp.Business.Interfaces;
-using Net5TestApp.Business.Mappings.AutoMapper;
 using Net5TestApp.Business.Services;
 using Net5TestApp.Business.ValidationRules.AdvertisementValidators;
 using Net5TestApp.Business.ValidationRules.AppUserValidators;
@@ -27,16 +25,6 @@ namespace Net5TestApp.Business.DependencyResolvers
             {
                 opt.UseSqlServer(configuration.GetConnectionString("Local"));
             });
-
-            var mapperConfiguration = new MapperConfiguration(opt =>
-            {
-                opt.AddProfile(new ProvidedServiceProfile());
-                opt.AddProfile(new AdvertisementProfile());
-                opt.AddProfile(new AppUserProfile());
-                opt.AddProfile(new GenderProfile());
-            });
-            var mapper = mapperConfiguration.CreateMapper();
-            services.AddSingleton(mapper);
 
             services.AddTransient<IValidator<ProvidedServiceCreateDto>, ProvidedServiceCreateDtoValidator>();
             services.AddTransient<IValidator<ProvidedServiceUpdateDto>, ProvidedServiceUpdateDtoValidator>();
