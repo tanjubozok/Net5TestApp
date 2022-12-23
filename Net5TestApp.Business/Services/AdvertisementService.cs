@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using Net5TestApp.Business.Interfaces;
+using Net5TestApp.Common.Enums;
 using Net5TestApp.Common.Objects;
 using Net5TestApp.DataAccess.Concrete.UnitOfWork;
 using Net5TestApp.Dtos.Concrete.AdvertisementDtos;

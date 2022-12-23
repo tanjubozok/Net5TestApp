@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Net5TestApp.Common.Enums;
+using System.Collections.Generic;
 
 namespace Net5TestApp.Common.Objects
 {
@@ -9,7 +10,6 @@ namespace Net5TestApp.Common.Objects
 
         public Response(ResponseType responseType, string message) : base(responseType, message)
         {
-
         }
 
         public Response(ResponseType responseType, T data) : base(responseType)

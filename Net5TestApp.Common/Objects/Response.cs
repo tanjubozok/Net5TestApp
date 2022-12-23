@@ -1,4 +1,6 @@
-﻿namespace Net5TestApp.Common.Objects
+﻿using Net5TestApp.Common.Enums;
+
+namespace Net5TestApp.Common.Objects
 {
     public class Response : IResponse
     {
@@ -15,12 +17,5 @@
 
         public string Message { get; set; }
         public ResponseType ResponseType { get; set; }
-    }
-
-    public enum ResponseType
-    {
-        Success,
-        ValidationError,
-        NotFound
     }
 }

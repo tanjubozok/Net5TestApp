@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Net5TestApp.Common.Enums;
 using Net5TestApp.Common.Objects;
 
 namespace Net5TestApp.WebUI.Extensions

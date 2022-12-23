@@ -1,4 +1,6 @@
-﻿namespace Net5TestApp.Common.Objects
+﻿using Net5TestApp.Common.Enums;
+
+namespace Net5TestApp.Common.Objects
 {
     public interface IResponse
     {
