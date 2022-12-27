@@ -1,0 +1,28 @@
+﻿@model AppUserLoginDto
+@{
+    TempData["Title"] = "Kayıt Ol";
+}
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<div style="margin-top:100px;"></div>
+<div class="container mt-5">
+    <div class="row">
+        <form asp-action="SignIn" asp-controller="Account" method="post" class="w-75 mx-auto">
+            <div class="text-danger" asp-validation-summary="All">
+            </div>            
+            <div class="mb-3">
+                <label>Kullanıcı Adınız :</label>
+                <input asp-for="@Model.Username" class="form-control" />
+            </div>            
+            <div class="mb-3">
+                <label>Şifreniz :</label>
+                <input type="password" asp-for="@Model.Password" class="form-control" />
+            </div>            
+            <div class="mb-3 text-end">
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </div>
+        </form>
+    </div>
+</div>

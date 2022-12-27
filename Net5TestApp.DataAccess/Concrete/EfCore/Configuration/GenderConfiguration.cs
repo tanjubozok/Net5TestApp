@@ -10,6 +10,20 @@ namespace Net5TestApp.DataAccess.Concrete.EfCore.Configuration
         {
             builder.Property(x => x.Definition).HasMaxLength(300);
             builder.Property(x => x.Definition).IsRequired();
+
+            builder.HasData(new Gender[]
+            {
+                new()
+                {
+                    Id=1,
+                    Definition="Erkek"
+                },
+                new()
+                {
+                    Id=2,
+                    Definition="Kadın"
+                }
+            });
         }
     }
 }

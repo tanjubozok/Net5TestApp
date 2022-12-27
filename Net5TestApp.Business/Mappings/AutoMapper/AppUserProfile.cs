@@ -11,6 +11,7 @@ namespace Net5TestApp.Business.Mappings.AutoMapper
             CreateMap<AppUserListDto, AppUser>().ReverseMap();
             CreateMap<AppUserCreateDto, AppUser>().ReverseMap();
             CreateMap<AppUserUpdateDto, AppUser>().ReverseMap();
+            CreateMap<AppUserLoginDto, AppUser>().ReverseMap();
         }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net5TestApp.DataAccess.Concrete.EfCore.Context;
 
 namespace Net5TestApp.DataAccess.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221227191958_Adding-SeedData")]
+    partial class AddingSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,56 +48,6 @@ namespace Net5TestApp.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Advertisements");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedDate = new DateTime(2022, 12, 27, 22, 57, 6, 495, DateTimeKind.Local).AddTicks(1255),
-                            Description = "C# programlama diline hakim,\r\nMS SQL orta seviyede bilgi sahibi olan,\r\nWeb uygulamaları geliştirmiş,\r\nGüncel web teknolojilerini takip eden,\r\nAnalitik düşünebilen ve problem çözme becerisi yüksek,\r\nTercihen eBA -CSP İş Akış Yönetim Sistemi projelerinin analiz, tasarım ve geliştirme süreçlerinde görev almış",
-                            Status = true,
-                            Title = "Yazılım Uzmanı"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedDate = new DateTime(2022, 12, 27, 22, 57, 6, 495, DateTimeKind.Local).AddTicks(1567),
-                            Description = "Üniversitelerin Mühendislik bölümlerinden mezun,\r\nEn az 2 yıl profesyonel iş tecrübesi olan,\r\nAskerlik hizmetini tamamlamış,\r\nAngular ve Typescript teknolojilerini kullanarak proje geliştirmiş,\r\nWeb API, LINQ, Entity Framework ve MSSQL bilgisi olan,\r\nC#, .NET Core bilgisi ve. NET Teknolojilerine hakim,\r\nVersiyon kontrol sistemleri (TFS, GIT) konusunda bilgi sahibi,\r\nTakım çalışmasına yatkın ve birlikte çalışmanın yarattığı sinerjinin farkında olan,\r\nİş takibi kuvvetli,\r\nTeknoloji ve yenilikleri takip edebilen,\r\nÖğrenmeye ve gelişmeye açık",
-                            Status = true,
-                            Title = ".Net Core / Angular Yazılım Geliştirme Uzmanı"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTime(2022, 12, 27, 22, 57, 6, 495, DateTimeKind.Local).AddTicks(1570),
-                            Description = "Proje deneyimi olan,\r\nVeritabanı mimarilerine hakim,\r\nServis yapıları konusunda tecrübeleri,\r\nPHP dili ve codeigniter üzerinde master seviyede ve MVC yapıları hakkında bilgi sahibi,\r\nEn az 5 yıl tecrübeli,\r\nLinux sunucular üzerinde PHP geliştirmiş,\r\nTakım çalışmasına ve ekip ruhuna uyum sağlayabilen,\r\nEn az 3 sene tecilli veya askerliğini bitirmiş,\r\nJetBrains araçlarını kullanabilen,\r\nVersiyon yönetimi konusunda tecrübeli",
-                            Status = true,
-                            Title = "Back End Developer"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2022, 12, 27, 22, 57, 6, 495, DateTimeKind.Local).AddTicks(1572),
-                            Description = "Tercihen üniversitelerin Bilgisayar Mühendisliği, Yazılım Mühendisliği, Bilgisayar Programcılığı ya da benzer bölümlerden mezun,\r\nMinimum 3 yıl .NET teknolojileriyle (C#, ASP) yazılım geliştirmesi tecrübesi olan,\r\nMicrosoft SQL Server tecrübesi olan, (View, Stored Procedure, SQL/TSQL)\r\nTercihen Web Service , Web Api geliştirmiş olan,\r\nTercihen HTML, CSS, Javascript bilgisine sahip\r\nKurumsal uygulamaların tasarım, implemantasyon, test, performans izleme, dokümantasyon tecrübesine sahip,\r\nTeknik dokümanları anlayabilecek seviyede İngilizce bilen,\r\nAnalitik düşünce ve problem çözme becerisi kuvvetli, iletişim yönü güçlü, değişime, yeni teknolojilere ve gelişmeye açık,\r\nErkek adaylar için askerliğini tamamlamış,",
-                            Status = true,
-                            Title = ".Net Yazılım Uzmanı"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTime(2022, 12, 27, 22, 57, 6, 495, DateTimeKind.Local).AddTicks(1574),
-                            Description = "C# programlama diline hakim,\r\nMS SQL orta seviyede bilgi sahibi olan,\r\nWeb uygulamaları geliştirmiş,\r\nGüncel web teknolojilerini takip eden,\r\nAnalitik düşünebilen ve problem çözme becerisi yüksek,\r\nTercihen eBA -CSP İş Akış Yönetim Sistemi projelerinin analiz, tasarım ve geliştirme süreçlerinde görev almış",
-                            Status = true,
-                            Title = "Yazılım Uzmanı"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedDate = new DateTime(2022, 12, 27, 22, 57, 6, 495, DateTimeKind.Local).AddTicks(1577),
-                            Description = "NET ve MSSQL konularında uzman,\r\nFront End ve Back End deneyimi bulunan,\r\nSEO optimizasyonları konusunda bilgi sahibi,\r\nNET platformunda Object Oriented programlama tecrübesine sahip,\r\nVB.NET dilinde kodlama yapmış, VB.NET diline hakim, C#.NET ile ilgili bilgi sahibi,\r\nHTML 5, CSS, Javascript, Ajax, CRM, Php, Headless, Hubspot konularında bilgi sahibi,\r\nİçerik yönetim sistemleri hakkında bilgi sahibi,\r\nSQL Server konusunda deneyimi olan,\r\nWeb uygulamaları geliştirmiş adayların başvurularını bekliyoruz.",
-                            Status = true,
-                            Title = "Yazılım Uzmanı"
-                        });
                 });
 
             modelBuilder.Entity("Net5TestApp.Entities.Concrete.AdvertisementAppUser", b =>
@@ -228,28 +180,6 @@ namespace Net5TestApp.DataAccess.Migrations
                     b.HasIndex("GenderId");
 
                     b.ToTable("AppUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Firstname = "Admin",
-                            GenderId = 1,
-                            Lastname = "Guest",
-                            Password = "123456",
-                            Phone = "12345678",
-                            Username = "admin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Firstname = "User",
-                            GenderId = 2,
-                            Lastname = "Guest",
-                            Password = "123456",
-                            Phone = "12345678",
-                            Username = "user"
-                        });
                 });
 
             modelBuilder.Entity("Net5TestApp.Entities.Concrete.AppUserRoles", b =>
@@ -273,20 +203,6 @@ namespace Net5TestApp.DataAccess.Migrations
                         .IsUnique();
 
                     b.ToTable("AppUserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AppRoleId = 1,
-                            AppUserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AppRoleId = 2,
-                            AppUserId = 2
-                        });
                 });
 
             modelBuilder.Entity("Net5TestApp.Entities.Concrete.Gender", b =>
@@ -304,18 +220,6 @@ namespace Net5TestApp.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Definition = "Erkek"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Definition = "Kadın"
-                        });
                 });
 
             modelBuilder.Entity("Net5TestApp.Entities.Concrete.MilitaryStatus", b =>
@@ -333,23 +237,6 @@ namespace Net5TestApp.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MilitaryStatuses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Definition = "Yaptı"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Definition = "Tecilli"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Definition = "Muaf"
-                        });
                 });
 
             modelBuilder.Entity("Net5TestApp.Entities.Concrete.ProvidedService", b =>

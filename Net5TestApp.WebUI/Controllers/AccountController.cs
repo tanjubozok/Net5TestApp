@@ -3,6 +3,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Net5TestApp.Business.Interfaces;
+using Net5TestApp.Common.Enums;
 using Net5TestApp.Dtos.Concrete.AppUserDtos;
 using Net5TestApp.WebUI.Extensions;
 using Net5TestApp.WebUI.Models;
@@ -16,6 +17,7 @@ namespace Net5TestApp.WebUI.Controllers
         private readonly IValidator<UserCreateModel> _userCreateModelValidator;
         private readonly IAppUserService _appUserService;
         private readonly IMapper _mapper;
+
         public AccountController(IGenderService genderService, IValidator<UserCreateModel> userCreateModelValidator, IAppUserService appUserService, IMapper mapper)
         {
             _genderService = genderService;
@@ -41,7 +43,7 @@ namespace Net5TestApp.WebUI.Controllers
             if (result.IsValid)
             {
                 var dto = _mapper.Map<AppUserCreateDto>(model);
-                var createResponse = await _appUserService.CreateAsync(dto);
+                var createResponse = await _appUserService.CreateWithRoleAsync(dto, (int)RoleTypes.Member);
                 return this.ResponseRedirectAction(createResponse, "SignIn");
             }
             foreach (var error in result.Errors)
@@ -51,6 +53,17 @@ namespace Net5TestApp.WebUI.Controllers
             var response = await _genderService.GetAllAsync();
             model.Genders = new SelectList(response.Data, "Id", "Definition", model.GenderId);
             return View(model);
+        }
+
+        public IActionResult SignIn()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SignIn(AppUserLoginDto dto)
+        {
+            return View();
         }
     }
 }

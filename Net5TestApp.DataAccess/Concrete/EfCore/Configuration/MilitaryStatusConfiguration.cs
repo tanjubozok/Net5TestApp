@@ -10,6 +10,25 @@ namespace Net5TestApp.DataAccess.Concrete.EfCore.Configuration
         {
             builder.Property(x => x.Definition).HasMaxLength(300);
             builder.Property(x => x.Definition).IsRequired();
+
+            builder.HasData(new MilitaryStatus[]
+            {
+                new()
+                {
+                    Id= 1,
+                    Definition="Yaptı"
+                },
+                new()
+                {
+                    Id= 2,
+                    Definition="Tecilli"
+                },
+                new()
+                {
+                    Id= 3,
+                    Definition="Muaf"
+                }
+            });
         }
     }
 }

@@ -15,13 +15,13 @@ namespace Net5TestApp.DataAccess.Concrete.EfCore.Configuration
             {
                 new()
                 {
-                    Definition="Admin",
                     Id=1,
+                    Definition="Admin",
                 },
                 new()
                 {
+                    Id=2,
                     Definition= "Member",
-                    Id=2
                 }
             });
         }
