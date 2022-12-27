@@ -1,4 +1,4 @@
-﻿namespace Net5TestApp.Dtos.Interfaces
+﻿namespace Net5TestApp.Dtos.Abstract
 {
     public interface IUpdateDto
     {

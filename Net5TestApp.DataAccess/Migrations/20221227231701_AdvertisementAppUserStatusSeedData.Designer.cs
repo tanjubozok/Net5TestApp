@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net5TestApp.DataAccess.Concrete.EfCore.Context;
 
 namespace Net5TestApp.DataAccess.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221227231701_AdvertisementAppUserStatusSeedData")]
+    partial class AdvertisementAppUserStatusSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +53,7 @@ namespace Net5TestApp.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 30, 45, 969, DateTimeKind.Local).AddTicks(4727),
+                            CreatedDate = new DateTime(2022, 12, 28, 2, 17, 1, 242, DateTimeKind.Local).AddTicks(3942),
                             Description = "C# programlama diline hakim,\r\nMS SQL orta seviyede bilgi sahibi olan,\r\nWeb uygulamaları geliştirmiş,\r\nGüncel web teknolojilerini takip eden,\r\nAnalitik düşünebilen ve problem çözme becerisi yüksek,\r\nTercihen eBA -CSP İş Akış Yönetim Sistemi projelerinin analiz, tasarım ve geliştirme süreçlerinde görev almış",
                             Status = true,
                             Title = "Yazılım Uzmanı"
@@ -59,7 +61,7 @@ namespace Net5TestApp.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 30, 45, 969, DateTimeKind.Local).AddTicks(5097),
+                            CreatedDate = new DateTime(2022, 12, 28, 2, 17, 1, 242, DateTimeKind.Local).AddTicks(4304),
                             Description = "Üniversitelerin Mühendislik bölümlerinden mezun,\r\nEn az 2 yıl profesyonel iş tecrübesi olan,\r\nAskerlik hizmetini tamamlamış,\r\nAngular ve Typescript teknolojilerini kullanarak proje geliştirmiş,\r\nWeb API, LINQ, Entity Framework ve MSSQL bilgisi olan,\r\nC#, .NET Core bilgisi ve. NET Teknolojilerine hakim,\r\nVersiyon kontrol sistemleri (TFS, GIT) konusunda bilgi sahibi,\r\nTakım çalışmasına yatkın ve birlikte çalışmanın yarattığı sinerjinin farkında olan,\r\nİş takibi kuvvetli,\r\nTeknoloji ve yenilikleri takip edebilen,\r\nÖğrenmeye ve gelişmeye açık",
                             Status = true,
                             Title = ".Net Core / Angular Yazılım Geliştirme Uzmanı"
@@ -67,7 +69,7 @@ namespace Net5TestApp.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 30, 45, 969, DateTimeKind.Local).AddTicks(5100),
+                            CreatedDate = new DateTime(2022, 12, 28, 2, 17, 1, 242, DateTimeKind.Local).AddTicks(4307),
                             Description = "Proje deneyimi olan,\r\nVeritabanı mimarilerine hakim,\r\nServis yapıları konusunda tecrübeleri,\r\nPHP dili ve codeigniter üzerinde master seviyede ve MVC yapıları hakkında bilgi sahibi,\r\nEn az 5 yıl tecrübeli,\r\nLinux sunucular üzerinde PHP geliştirmiş,\r\nTakım çalışmasına ve ekip ruhuna uyum sağlayabilen,\r\nEn az 3 sene tecilli veya askerliğini bitirmiş,\r\nJetBrains araçlarını kullanabilen,\r\nVersiyon yönetimi konusunda tecrübeli",
                             Status = true,
                             Title = "Back End Developer"
@@ -75,7 +77,7 @@ namespace Net5TestApp.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 30, 45, 969, DateTimeKind.Local).AddTicks(5103),
+                            CreatedDate = new DateTime(2022, 12, 28, 2, 17, 1, 242, DateTimeKind.Local).AddTicks(4309),
                             Description = "Tercihen üniversitelerin Bilgisayar Mühendisliği, Yazılım Mühendisliği, Bilgisayar Programcılığı ya da benzer bölümlerden mezun,\r\nMinimum 3 yıl .NET teknolojileriyle (C#, ASP) yazılım geliştirmesi tecrübesi olan,\r\nMicrosoft SQL Server tecrübesi olan, (View, Stored Procedure, SQL/TSQL)\r\nTercihen Web Service , Web Api geliştirmiş olan,\r\nTercihen HTML, CSS, Javascript bilgisine sahip\r\nKurumsal uygulamaların tasarım, implemantasyon, test, performans izleme, dokümantasyon tecrübesine sahip,\r\nTeknik dokümanları anlayabilecek seviyede İngilizce bilen,\r\nAnalitik düşünce ve problem çözme becerisi kuvvetli, iletişim yönü güçlü, değişime, yeni teknolojilere ve gelişmeye açık,\r\nErkek adaylar için askerliğini tamamlamış,",
                             Status = true,
                             Title = ".Net Yazılım Uzmanı"
@@ -83,7 +85,7 @@ namespace Net5TestApp.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 30, 45, 969, DateTimeKind.Local).AddTicks(5105),
+                            CreatedDate = new DateTime(2022, 12, 28, 2, 17, 1, 242, DateTimeKind.Local).AddTicks(4311),
                             Description = "C# programlama diline hakim,\r\nMS SQL orta seviyede bilgi sahibi olan,\r\nWeb uygulamaları geliştirmiş,\r\nGüncel web teknolojilerini takip eden,\r\nAnalitik düşünebilen ve problem çözme becerisi yüksek,\r\nTercihen eBA -CSP İş Akış Yönetim Sistemi projelerinin analiz, tasarım ve geliştirme süreçlerinde görev almış",
                             Status = true,
                             Title = "Yazılım Uzmanı"
@@ -91,7 +93,7 @@ namespace Net5TestApp.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 30, 45, 969, DateTimeKind.Local).AddTicks(5108),
+                            CreatedDate = new DateTime(2022, 12, 28, 2, 17, 1, 242, DateTimeKind.Local).AddTicks(4314),
                             Description = "NET ve MSSQL konularında uzman,\r\nFront End ve Back End deneyimi bulunan,\r\nSEO optimizasyonları konusunda bilgi sahibi,\r\nNET platformunda Object Oriented programlama tecrübesine sahip,\r\nVB.NET dilinde kodlama yapmış, VB.NET diline hakim, C#.NET ile ilgili bilgi sahibi,\r\nHTML 5, CSS, Javascript, Ajax, CRM, Php, Headless, Hubspot konularında bilgi sahibi,\r\nİçerik yönetim sistemleri hakkında bilgi sahibi,\r\nSQL Server konusunda deneyimi olan,\r\nWeb uygulamaları geliştirmiş adayların başvurularını bekliyoruz.",
                             Status = true,
                             Title = "Yazılım Uzmanı"
@@ -403,56 +405,6 @@ namespace Net5TestApp.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProvidedServices");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 31, 45, 976, DateTimeKind.Local).AddTicks(5148),
-                            Description = "Web site tasarımınız için isteklerinizi alır, değerlendirir ve istekleriniz doğrultusunda eşsiz web sitenizi yapar ve internette yayınlarız. Temiz kodlanmış, hızlı ve seo uyumlu websitesi tercihi için doğru yerdesiniz.",
-                            ImagePath = "~/assets/img/01.jpg",
-                            Title = "Web Tasarım"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 32, 45, 976, DateTimeKind.Local).AddTicks(5639),
-                            Description = "Sektörünüze uygun ios ve android mobil uygulamanızı geliştirir, play store ve app store’da yayınlarız. Uygulamanızı mobil marketler için optimize ederiz ve düzenleriz.",
-                            ImagePath = "~/assets/img/02.jpg",
-                            Title = "Mobil Uygulama Geliştirme"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 33, 45, 976, DateTimeKind.Local).AddTicks(5651),
-                            Description = "Web siteniz için içerik yönetim paneli inşaa ederek web sitenizi web uygulamasına dönüştürür ve dinamik hale getiririz. Firma olarak üzerinde değişiklik yapabilir ve özelleştirebilirsiniz.",
-                            ImagePath = "~/assets/img/03.jpg",
-                            Title = "Web Uygulama Geliştirme"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 31, 45, 976, DateTimeKind.Local).AddTicks(5654),
-                            Description = "Arama motoru optimizasyonu (SEO) için web sitenizin sayfa içi seo ayarlarını yapar sayfa dışında websitenizin otoritesini arttırmak için backlink ağı inşaa ederiz. Anahtar kelime takibi yapar ve sizi üst sıralara taşırız.",
-                            ImagePath = "~/assets/img/01.jpg",
-                            Title = "SEO"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 32, 45, 976, DateTimeKind.Local).AddTicks(5655),
-                            Description = "Yazılım Geliştirmede son teknolojileri kullanır ve firmanız için gereken özel yazılımları son teknolojiler ile geliştirir ve güncelleriz. Özel yazılımlarınız için teknik destek sağlarız.",
-                            ImagePath = "~/assets/img/02.jpg",
-                            Title = "Özel Yazılım Geliştirme"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedDate = new DateTime(2022, 12, 28, 2, 33, 45, 976, DateTimeKind.Local).AddTicks(5657),
-                            Description = "Profesyonel sosyal medya ve tasarım ekibimiz ile sayfanızdaki etkileşimleri en yükseğe çıkarın.",
-                            ImagePath = "~/assets/img/03.jpg",
-                            Title = "Sosyal Medya Yönetimi"
-                        });
                 });
 
             modelBuilder.Entity("Net5TestApp.Entities.Concrete.AdvertisementAppUser", b =>

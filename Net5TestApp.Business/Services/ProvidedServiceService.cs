@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using Net5TestApp.Business.Interfaces;
+using Net5TestApp.Business.Abstract;
 using Net5TestApp.DataAccess.Concrete.UnitOfWork;
 using Net5TestApp.Dtos.Concrete.ProvidedServiceDtos;
 using Net5TestApp.Entities.Concrete;

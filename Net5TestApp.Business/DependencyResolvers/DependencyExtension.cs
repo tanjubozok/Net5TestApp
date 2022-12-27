@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Net5TestApp.Business.Interfaces;
+using Net5TestApp.Business.Abstract;
 using Net5TestApp.Business.Services;
 using Net5TestApp.Business.ValidationRules.AdvertisementValidators;
 using Net5TestApp.Business.ValidationRules.AppUserValidators;

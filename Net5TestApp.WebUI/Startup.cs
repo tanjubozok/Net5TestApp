@@ -39,7 +39,7 @@ namespace Net5TestApp.WebUI
                     opt.ExpireTimeSpan = TimeSpan.FromDays(20);
 
                     opt.LoginPath = new PathString("/Account/SignIn");
-                    opt.LogoutPath = new PathString("/Account/SignOut");
+                    opt.LogoutPath = new PathString("/Account/LogOut");
                     opt.AccessDeniedPath = new PathString("/Account/AccessDenied");
                 });
 

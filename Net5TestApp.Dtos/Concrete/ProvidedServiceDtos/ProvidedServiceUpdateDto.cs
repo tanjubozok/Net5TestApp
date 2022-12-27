@@ -1,4 +1,4 @@
-﻿using Net5TestApp.Dtos.Interfaces;
+﻿using Net5TestApp.Dtos.Abstract;
 
 namespace Net5TestApp.Dtos.Concrete.ProvidedServiceDtos
 {

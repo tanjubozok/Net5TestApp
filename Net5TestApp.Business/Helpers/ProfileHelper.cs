@@ -14,6 +14,7 @@ namespace Net5TestApp.Business.Helpers
                 new AdvertisementProfile(),
                 new AppUserProfile(),
                 new GenderProfile(),
+                new AppRoleProfile()
             };
         }
     }

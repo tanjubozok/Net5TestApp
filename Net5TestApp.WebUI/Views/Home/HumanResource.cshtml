@@ -22,14 +22,14 @@
                             <hr />
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <button class="btn btn-primary">Başvur</button>
+                                <a asp-area="" asp-controller="Advertisement" asp-action="Send" class="btn btn-primary">Başvur</a>
                             }
                             else
                             {
                                 <div>
                                     İlana başvurabilmek için giriş yapmanız gerekiyor.
                                 </div>
-                                <a class="btn btn-info btn-sm">Giriş Yap</a>
+                                <a asp-area="" asp-controller="Account" asp-action="SignIn" class="btn btn-info btn-sm">Giriş Yap</a>
                             }
                         </div>
                     </div>

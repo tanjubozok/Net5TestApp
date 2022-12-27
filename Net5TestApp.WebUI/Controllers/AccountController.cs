@@ -1,12 +1,16 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Net5TestApp.Business.Interfaces;
+using Net5TestApp.Business.Abstract;
 using Net5TestApp.Common.Enums;
 using Net5TestApp.Dtos.Concrete.AppUserDtos;
 using Net5TestApp.WebUI.Extensions;
 using Net5TestApp.WebUI.Models;
+using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Net5TestApp.WebUI.Controllers
@@ -29,7 +33,7 @@ namespace Net5TestApp.WebUI.Controllers
         public async Task<IActionResult> SignUp()
         {
             var response = await _genderService.GetAllAsync();
-            var model = new UserCreateModel
+            UserCreateModel model = new()
             {
                 Genders = new SelectList(response.Data, "Id", "Definition")
             };
@@ -61,9 +65,39 @@ namespace Net5TestApp.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult SignIn(AppUserLoginDto dto)
+        public async Task<IActionResult> SignIn(AppUserLoginDto dto)
         {
-            return View();
+            var result = await _appUserService.CheckUserAsync(dto);
+            if (result.ResponseType == ResponseType.Success)
+            {
+                List<Claim> claims = new();
+                var roleResult = await _appUserService.GetRolesByUserIdAsync(result.Data.Id);
+                if (roleResult.ResponseType == ResponseType.Success)
+                {
+                    foreach (var item in roleResult.Data)
+                    {
+                        claims.Add(new Claim(ClaimTypes.Role, item.Definition));
+                    }
+                }
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, result.Data.Id.ToString()));
+
+                ClaimsIdentity claimsIdentity = new(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                AuthenticationProperties authProperties = new()
+                {
+                    IsPersistent = dto.RememberMe
+                };
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
+                return RedirectToAction("Index", "Home");
+            }
+            ModelState.AddModelError("", result.Message);
+            return View(dto);
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

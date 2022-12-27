@@ -1,6 +1,5 @@
 ﻿using Net5TestApp.Common.Objects;
 using Net5TestApp.Dtos.Abstract;
-using Net5TestApp.Dtos.Interfaces;
 using Net5TestApp.Entities.Concrete;
 using System.Collections.Generic;
 using System.Threading.Tasks;
