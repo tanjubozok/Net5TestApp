@@ -6,6 +6,9 @@
 <div style="margin-top:100px;"></div>
 
 <div class="container mt-5">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
     <div class="row">
         <form asp-area="" asp-controller="Advertisement" asp-action="Send" method="post" enctype="multipart/form-data">
             <input type="hidden" asp-for="AdvertisementId" />
@@ -44,6 +47,7 @@
 
 @section Scripts{
     <script>
+        setInputVisibility();
         function setInputVisibility() {
             var selectedElement = document.getElementById("MilitaryStatusId");
             var militaryStatusId = selectedElement.value;

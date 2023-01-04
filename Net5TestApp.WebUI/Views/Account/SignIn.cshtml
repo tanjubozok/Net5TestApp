@@ -21,8 +21,8 @@
                 <input type="password" asp-for="@Model.Password" class="form-control" />
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" asp-for="RememberMe" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Beni Hatırla</label>
+                <input type="checkbox" class="form-check-input" asp-for="RememberMe">
+                <label class="form-check-label" asp-for="RememberMe">Beni Hatırla</label>
             </div>
             <div class="mb-3 text-end">
                 <button type="submit" class="btn btn-primary">Giriş Yap</button>

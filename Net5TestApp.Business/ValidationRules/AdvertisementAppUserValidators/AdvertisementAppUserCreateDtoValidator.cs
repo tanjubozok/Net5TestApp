@@ -17,7 +17,7 @@ namespace Net5TestApp.Business.ValidationRules.AdvertisementAppUserValidators
             RuleFor(x => x.AppUserId)
                 .NotEmpty();
 
-            RuleFor(x => x.CvFile)
+            RuleFor(x => x.CvPath)
                 .NotEmpty().WithMessage("Cv dosyası eksik");
 
             RuleFor(x => x.EndDate)

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Net5TestApp.Business.Abstract;
 using Net5TestApp.Business.Extensions;
 using Net5TestApp.Common.Enums;
@@ -8,6 +9,7 @@ using Net5TestApp.DataAccess.Concrete.UnitOfWork;
 using Net5TestApp.Dtos.Concrete.AdvertisementAppUserDtos;
 using Net5TestApp.Entities.Concrete;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Net5TestApp.Business.Services
@@ -30,7 +32,8 @@ namespace Net5TestApp.Business.Services
             var result = _craeteDtoValidator.Validate(dto);
             if (result.IsValid)
             {
-                var control = await _uow.GetRepository<AdvertisementAppUser>().GetByFilterAsync(x => x.AppUserId == dto.AppUserId && x.AdvertisementId == dto.AdvertisementId);
+                var control = await _uow.GetRepository<AdvertisementAppUser>()
+                    .GetByFilterAsync(x => x.AppUserId == dto.AppUserId && x.AdvertisementId == dto.AdvertisementId);
                 if (control == null)
                 {
                     await _uow.GetRepository<AdvertisementAppUser>().AddAsync(_mapper.Map<AdvertisementAppUser>(dto));
@@ -48,6 +51,28 @@ namespace Net5TestApp.Business.Services
                 return new Response<AdvertisementAppUserCreateDto>(dto, errors);
             }
             return new Response<AdvertisementAppUserCreateDto>(dto, result.CustomValidationErrors());
+        }
+
+        public async Task<List<AdvertisementAppUserListDto>> GetListAsync(AdvertisementAppUserStatusTypes type)
+        {
+            var query = _uow.GetRepository<AdvertisementAppUser>().GetQueryable();
+            var list = await query
+                .Include(x => x.Advertisement)
+                .Include(x => x.AdvertisementAppUserStatus)
+                .Include(x => x.MilitaryStatus)
+                .Include(x => x.AppUser).ThenInclude(x => x.Gender)
+                .Where(x => x.AdvertisementAppUserStatusId == (int)type)
+                .ToListAsync();
+
+            return _mapper.Map<List<AdvertisementAppUserListDto>>(list);
+        }
+
+        public async Task SetStatusAsync(int advertisementAppUserId, AdvertisementAppUserStatusTypes type)
+        {
+            var query = _uow.GetRepository<AdvertisementAppUser>().GetQueryable();
+            var entity = await query.SingleOrDefaultAsync(x => x.Id == advertisementAppUserId);
+            entity.AdvertisementAppUserStatusId = (int)type;
+            await _uow.SaveChangesAsync();
         }
     }
 }

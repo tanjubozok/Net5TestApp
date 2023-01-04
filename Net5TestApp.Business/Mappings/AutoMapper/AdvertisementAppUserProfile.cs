@@ -9,6 +9,7 @@ namespace Net5TestApp.Business.Mappings.AutoMapper
         public AdvertisementAppUserProfile()
         {
             this.CreateMap<AdvertisementAppUser, AdvertisementAppUserCreateDto>().ReverseMap();
+            this.CreateMap<AdvertisementAppUser, AdvertisementAppUserListDto>().ReverseMap();
         }
     }
 }

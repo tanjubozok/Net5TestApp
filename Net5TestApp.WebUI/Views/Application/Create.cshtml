@@ -1,0 +1,42 @@
+﻿@model AdvertisementCreateDto
+@{
+}
+
+<div style="margin-top:100px;"></div>
+
+<div class="container mt-5">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form asp-action="Create" asp-controller="Application" method="post">
+        <div class="mb-3">
+            <label>İlanın Başlığı :</label>
+            <input type="text" class="form-control" asp-for="Title" />
+        </div>
+        <div class="mb-3">
+            <label class="form-check-label">Aktif</label>
+            <input type="checkbox" class="form-check-input" asp-for="Status" />
+        </div>
+        <div class="mb-3">
+            <label>İçerik</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Kaydet</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.25.1/trumbowyg.min.js" integrity="sha512-t4CFex/T+ioTF5y0QZnCY9r5fkE8bMf9uoNH2HNSwsiTaMQMO0C9KbKPMvwWNdVaEO51nDL3pAzg4ydjWXaqbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#Description").trumbowyg();
+        })
+    </script>
+}
+
+@section Styles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.25.1/ui/trumbowyg.min.css" integrity="sha512-nwpMzLYxfwDnu68Rt9PqLqgVtHkIJxEPrlu3PfTfLQKVgBAlTKDmim1JvCGNyNRtyvCx1nNIVBfYm8UZotWd4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+}

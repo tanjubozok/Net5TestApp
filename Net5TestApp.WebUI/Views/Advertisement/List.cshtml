@@ -1,0 +1,62 @@
+﻿@model List<AdvertisementAppUserListDto>
+@{
+    TempData["Title"] = "List";
+}
+
+<div style="margin-top:100px;"></div>
+
+<div class="container mt-5">
+    <div class="row">
+        @if (Model?.Count > 0)
+        {
+            <div class="text-end my-3">
+                <a asp-action="ApprovedList" asp-controller="Advertisement" class="btn btn-primary">Mülakata Çağrılan Başvurular</a>
+                <a asp-action="RejectedList" asp-controller="Advertisement" class="btn btn-info">Reddedilen Başvurular</a>
+            </div>
+
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Başvurulan İlan</th>
+                        <th>Başvuranın Adı Soyadı</th>
+                        <th>Başvuranın Cinsiyeti</th>
+                        <th>Başvuru Durumu</th>
+                        <th>Askerlik Durumu</th>
+                        <th>Tecil Bitiş Tarihi</th>
+                        <th>İş Deneyimi</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.Advertisement.Title</th>
+                            <th>@item.AppUser.Firstname @item.AppUser.Lastname</th>
+                            <th>@item.AppUser.Gender.Definition</th>
+                            <th>@item.AdvertisementAppUserStatus.Definition</th>
+                            <th>@item.MilitaryStatus.Definition</th>
+                            <th>@(item.EndDate == null ? "Muaf ya da Yapmış" : item.EndDate?.ToString("dd.MM.yyyy"))</th>
+                            <th>@item.WorkExperience</th>
+                            <td>
+                                <a asp-action="SetStatus" asp-controller="Advertisement" asp-route-advertisementAppUserId="@item.Id" asp-route-type="@((int)AdvertisementAppUserStatusTypes.Mulakat)" class="btn btn-primary">Mülakata Çağır</a>
+                                <a asp-action="SetStatus" asp-controller="Advertisement" asp-route-advertisementAppUserId="@item.Id" asp-route-type="@((int)AdvertisementAppUserStatusTypes.Olumsuz)" class="btn btn-dark">Reddet</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="text-end my-3 p-1">
+                <a asp-action="ApprovedList" asp-controller="Advertisement" class="btn btn-primary">Mülakata Çağrılan Başvurular</a>
+                <a asp-action="RejectedList" asp-controller="Advertisement" class="btn btn-info">Reddedilen Başvurular</a>
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                Başvuran bulunamadı.
+            </div>
+        }
+    </div>
+</div>

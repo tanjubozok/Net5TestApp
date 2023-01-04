@@ -8,13 +8,13 @@ namespace Net5TestApp.Business.ValidationRules.AdvertisementValidators
         public AdvertisementUpdateDtoValidator()
         {
             RuleFor(x => x.Id)
-                .NotEmpty().WithMessage("Zorunlu alandır");
+                .NotEmpty().WithMessage("Id zorunlu alandır");
 
             RuleFor(x => x.Title)
-                .NotEmpty().WithMessage("Zorunlu alandır");
+                .NotEmpty().WithMessage("Başlık zorunlu alandır");
 
             RuleFor(x => x.Description)
-                .NotEmpty().WithMessage("Zorunlu alandır");
+                .NotEmpty().WithMessage("Açıklama zorunlu alandır");
         }
     }
 }
