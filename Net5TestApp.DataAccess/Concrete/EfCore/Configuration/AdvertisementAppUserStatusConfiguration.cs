@@ -21,17 +21,12 @@ namespace Net5TestApp.DataAccess.Concrete.EfCore.Configuration
                 new()
                 {
                     Id= 2,
-                    Definition="Mülakata Çağrıldı"
+                    Definition="Mülakat"
                 },
                 new()
                 {
                     Id= 3,
-                    Definition="Olumlu Sonuçlandı"
-                },
-                new()
-                {
-                    Id= 4,
-                    Definition="Olumsuz Sonuçlandı"
+                    Definition="Olumsuz"
                 }
             });
         }

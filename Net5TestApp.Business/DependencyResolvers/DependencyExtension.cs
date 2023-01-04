@@ -4,12 +4,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Net5TestApp.Business.Abstract;
 using Net5TestApp.Business.Services;
+using Net5TestApp.Business.ValidationRules.AdvertisementAppUserValidators;
 using Net5TestApp.Business.ValidationRules.AdvertisementValidators;
 using Net5TestApp.Business.ValidationRules.AppUserValidators;
 using Net5TestApp.Business.ValidationRules.GenderValidators;
 using Net5TestApp.Business.ValidationRules.ProvidedServiceValidators;
 using Net5TestApp.DataAccess.Concrete.EfCore.Context;
 using Net5TestApp.DataAccess.Concrete.UnitOfWork;
+using Net5TestApp.Dtos.Concrete.AdvertisementAppUserDtos;
 using Net5TestApp.Dtos.Concrete.AdvertisementDtos;
 using Net5TestApp.Dtos.Concrete.AppUserDtos;
 using Net5TestApp.Dtos.Concrete.GenderDtos;
@@ -35,12 +37,14 @@ namespace Net5TestApp.Business.DependencyResolvers
             services.AddTransient<IValidator<GenderCreateDto>, GenderCreateDtoValidator>();
             services.AddTransient<IValidator<GenderUpdateDto>, GenderUpdateDtoValidator>();
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementAppUserCreateDto>, AdvertisementAppUserCreateDtoValidator>();
 
             services.AddScoped<IUow, Uow>();
             services.AddScoped<IProvidedServiceService, ProvidedServiceService>();
             services.AddScoped<IAdvertisementService, AdvertisementService>();
             services.AddScoped<IAppUserService, AppUserService>();
             services.AddScoped<IGenderService, GenderService>();
+            services.AddScoped<IAdvertisementAppUserService, AdvertisementAppUserService>();
         }
     }
 }

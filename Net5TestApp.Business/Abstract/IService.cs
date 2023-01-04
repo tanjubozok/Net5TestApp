@@ -13,7 +13,7 @@ namespace Net5TestApp.Business.Abstract
         where T : BaseEntity
     {
         Task<IResponse<List<ListDto>>> GetAllAsync();
-        Task<IResponse<IDto>> GetByIdAsync(int id);
+        Task<IResponse<IDto>> GetByIdAsync<IDto>(int id);
 
         Task<IResponse<CreateDto>> CreateAsync(CreateDto dto);
         Task<IResponse<UpdateDto>> UpdateAsync(UpdateDto dto);

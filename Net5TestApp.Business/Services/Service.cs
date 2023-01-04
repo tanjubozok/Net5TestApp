@@ -51,7 +51,7 @@ namespace Net5TestApp.Business.Services
             return new Response<List<ListDto>>(ResponseType.Success, dto);
         }
 
-        public async Task<IResponse<IDto>> GetByIdAsync(int id)
+        public async Task<IResponse<IDto>> GetByIdAsync<IDto>(int id)
         {
             var data = await _uow.GetRepository<T>().GetByFilterAsync(x => x.Id == id);
             if (data == null)

@@ -22,7 +22,7 @@
                             <hr />
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <a asp-area="" asp-controller="Advertisement" asp-action="Send" class="btn btn-primary">Başvur</a>
+                                <a asp-area="" asp-controller="Advertisement" asp-action="Send" asp-route-advertisementId="@Model[i].Id" class="btn btn-primary">Başvur</a>
                             }
                             else
                             {
